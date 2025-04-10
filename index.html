@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forma’sint.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="top-bar">
+        <div class="top-bar__left">
+          <div class="top-bar__logo">
+            <img
+              class="top-bar__logo-icon"
+              alt="Forma'sint logo"
+              src="assets/images/forma_icon.svg"
+              tabindex="0"
+            />
+            <p class="top-bar__logo-title">FORMA’SINT.</p>
+          </div>
+          <p class="top-bar__company-name">IDOMODS &lt;/&gt;</p>
+        </div>
+        <div class="top-bar__nav-panel">
+          <nav class="top-bar__nav">
+            <ul class="top-bar__nav-list">
+              <li class="top-bar__nav-item">
+                <a
+                  href="#home"
+                  class="top-bar__nav-link"
+                  aria-label="Link to home"
+                  tabindex="0"
+                  >HOME</a
+                >
+              </li>
+              <li class="top-bar__nav-item">
+                <a
+                  href="#featured-products"
+                  class="top-bar__nav-link"
+                  aria-label="Link to featured products"
+                  >FEATURED PRODUCTS</a
+                >
+              </li>
+              <li class="top-bar__nav-item">
+                <a
+                  href="#product-listing"
+                  class="top-bar__nav-link"
+                  aria-label="Link to product listing"
+                  >PRODUCT LISTING</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="top-bar__right">
+          <div class="top-bar__user">
+            <img
+              class="top-bar__user-icon"
+              alt="User profile icon"
+              src="/assets/images/user.svg"
+            />
+            <p class="top-bar__user-role">FRONTEND DEVELOPER</p>
+          </div>
+        </div>
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" />
+        <label
+          for="hamburger-toggle"
+          class="top-bar__hamburger"
+          aria-label="Toggle navigation"
+          tabindex="0"
+        >
+          <img
+            src="assets/images/hamburger.svg"
+            alt="Burger menu"
+            class="top-bar__hamburger-icon"
+          />
+          <p>MENU</p>
+        </label>
+        <div class="drawer-overlay"></div>
+        <div class="drawer-menu">
+          <div class="drawer-menu__header">
+            <img
+              class="top-bar__logo-icon"
+              alt="Forma'sint logo"
+              src="assets/images/forma_icon.svg"
+              tabindex="0"
+            />
+            <label
+              for="hamburger-toggle"
+              class="drawer-menu__close"
+              aria-label="Close menu"
+            >
+              <div class="drawer-menu__close-content">
+                <img
+                  src="assets/images/close_icon.svg"
+                  alt="Close menu"
+                  role="button"
+                  tabindex="0"
+                />
+                <span>CLOSE</span>
+              </div>
+            </label>
+          </div>
+          <nav class="drawer-menu__nav">
+            <ul class="drawer-menu__list">
+              <li class="drawer-menu__item">
+                <a href="#home" class="drawer-menu__link" tabindex="0">HOME</a>
+              </li>
+              <li class="drawer-menu__item">
+                <a href="#featured-products" class="drawer-menu__link"
+                  >FEATURED PRODUCTS</a
+                >
+              </li>
+              <li class="drawer-menu__item">
+                <a href="#product-listing" class="drawer-menu__link"
+                  >PRODUCT LISTING</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section id="home" class="hero">
+        <div class="hero__logo">
+          <img
+            class="hero__logo-img"
+            alt="Forma'sint logo"
+            src="assets/images/logo_forma.svg"
+          />
+        </div>
+        <div class="hero__banner">
+          <img
+            class="hero__banner-img"
+            alt="Hero banner showcasing products"
+            src="assets/images/hero.jpg"
+          />
+        </div>
+      </section>
+
+      <section id="featured-products" class="featured-products">
+        <p class="featured-products__subtitle">FEATURED PRODUCTS</p>
+        <h1 class="featured-products__title">Browse featured</h1>
+        <div class="swiper-container featured-products__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="featured-products__item">
+                <div
+                  class="featured-products__item-image-container tag-bestseller"
+                >
+                  <img
+                    class="featured-products__item-img"
+                    alt="Dark blue alpine climbing jacket"
+                    src="https://brandstestowy.smallhost.pl/KURTKA_01.png"
+                  />
+                  <button
+                    class="featured-products__item-favorite"
+                    aria-label="Add to favorites"
+                    tabindex="0"
+                  >
+                    <img
+                      src="assets/images/favorite.svg"
+                      alt="Add to favorites"
+                      id="featured-products__item-favorite__image"
+                    />
+                  </button>
+                </div>
+                <p class="featured-products__item-name">
+                  Dark blue alpine climbing jacket
+                </p>
+                <p class="featured-products__item-price">€300,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="featured-products__item">
+                <div
+                  class="featured-products__item-image-container tag-limited-edition"
+                >
+                  <img
+                    class="featured-products__item-img"
+                    alt="Red alpine jacket"
+                    src="https://brandstestowy.smallhost.pl/KURTKA_02.png"
+                  />
+                  <button
+                    class="featured-products__item-favorite"
+                    aria-label="Add to favorites"
+                    tabindex="0"
+                  >
+                    <img
+                      src="assets/images/favorite.svg"
+                      alt="Add to favorites"
+                      id="featured-products__item-favorite__image"
+                    />
+                  </button>
+                </div>
+                <p class="featured-products__item-name">Red alpine jacket</p>
+                <p class="featured-products__item-price">€350,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="featured-products__item">
+                <div class="featured-products__item-image-container">
+                  <img
+                    class="featured-products__item-img"
+                    alt="item"
+                    src="https://brandstestowy.smallhost.pl/KURTKA_03.png"
+                  />
+                  <button class="featured-products__item-favorite" tabindex="0">
+                    <img
+                      src="assets/images/favorite.svg"
+                      alt="Add to favorites"
+                      id="featured-products__item-favorite__image"
+                    />
+                  </button>
+                </div>
+                <p class="featured-products__item-name">Green alpine jacket</p>
+                <p class="featured-products__item-price">€380,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="featured-products__item">
+                <div
+                  class="featured-products__item-image-container tag-bestseller"
+                >
+                  <img
+                    class="featured-products__item-img"
+                    alt="item"
+                    src="https://brandstestowy.smallhost.pl/KURTKA_04.png"
+                  />
+                  <button class="featured-products__item-favorite" tabindex="0">
+                    <img
+                      src="assets/images/favorite.svg"
+                      alt="Add to favorites"
+                      id="featured-products__item-favorite__image"
+                    />
+                  </button>
+                </div>
+                <p class="featured-products__item-name">Black alpine jacket</p>
+                <p class="featured-products__item-price">€400,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="featured-products__item">
+                <div
+                  class="featured-products__item-image-container tag-limited-edition"
+                >
+                  <img
+                    class="featured-products__item-img"
+                    alt="item"
+                    src="https://brandstestowy.smallhost.pl/KURTKA_05.png"
+                  />
+                  <button class="featured-products__item-favorite" tabindex="0">
+                    <img
+                      src="assets/images/favorite.svg"
+                      alt="Add to favorites"
+                      id="featured-products__item-favorite__image"
+                    />
+                  </button>
+                </div>
+                <p class="featured-products__item-name">Blue alpine jacket</p>
+                <p class="featured-products__item-price">€350,00 EUR</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="featured-products__item">
+                <div
+                  class="featured-products__item-image-container tag-bestseller"
+                >
+                  <img
+                    class="featured-products__item-img"
+                    alt="item"
+                    src="https://brandstestowy.smallhost.pl/KURTKA_02.png"
+                  />
+                  <button class="featured-products__item-favorite" tabindex="0">
+                    <img
+                      src="assets/images/favorite.svg"
+                      alt="Add to favorites"
+                      id="featured-products__item-favorite__image"
+                    />
+                  </button>
+                </div>
+                <p class="featured-products__item-name">Yellow alpine jacket</p>
+                <p class="featured-products__item-price">€320,00 EUR</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next" aria-label="Next slide"></div>
+          <div class="featured-products__progress-bar">
+            <div class="featured-products__progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="product-listing" class="product-listing">
+        <div class="product-listing__count">
+          <label
+            for="product-count-select"
+            id="product-count-select"
+            class="product-listing__count-text"
+            aria-label="Select number of products per page"
+          >
+            NUMBER OF PRODUCTS PER PAGE
+          </label>
+
+          <div class="product-listing__select-wrapper">
+            <div class="product-listing__select" tabindex="0">
+              <div class="product-listing__select-trigger">14</div>
+              <div class="product-listing__options">
+                <div
+                  class="product-listing__option product-listing__option--selected"
+                  data-value="14"
+                >
+                  14
+                </div>
+                <div class="product-listing__option" data-value="24">24</div>
+                <div class="product-listing__option" data-value="36">36</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-listing__grid"></div>
+      </section>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js" defer></script>
+    
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+      <div class="product-modal__overlay"></div>
+      <div class="product-modal__content">
+        <button class="product-modal__close" aria-label="Close modal">
+          <img src="assets/images/close_icon.svg" alt="Close" />
+          <p>CLOSE</p>
+        </button>
+        <div class="product-modal__image-container">
+          <img class="product-modal__image" alt="Product image" />
+        </div>
+        <div class="product-modal__details">
+          <p class="product-modal__id"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
