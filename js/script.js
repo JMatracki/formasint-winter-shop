@@ -57,7 +57,7 @@ const appendProducts = (products) => {
           </div>
           <button class="product-listing__banner-btn" aria-label="Check this product out">
             CHECK THIS OUT
-            <img class="product-listing__banner-icon" src="../assets/images/right_arrow.svg" alt="" aria-hidden="true" />
+            <img class="product-listing__banner-icon" src="assets/images/right_arrow.svg" alt="" aria-hidden="true" />
           </button>
         </div>
 
