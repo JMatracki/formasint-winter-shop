@@ -27,6 +27,10 @@ body {
   color: var(--text-color);
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 a {
   color: var(--text-color);
 }
@@ -59,8 +63,8 @@ a {
 }
 
 .top-bar__hamburger-icon {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .top-bar__left {
@@ -100,7 +104,7 @@ a {
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   z-index: 2000;
-  padding: 24px;
+  padding: 24px 16px 24px 32px;
   visibility: hidden;
 }
 
@@ -108,7 +112,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 128px;
+  margin-bottom: 104px;
 }
 
 .drawer-menu__logo {
@@ -130,10 +134,6 @@ a {
 
 .drawer-menu__close:hover {
   opacity: 0.7;
-}
-
-.drawer-menu__nav {
-  margin-top: 24px;
 }
 
 .drawer-menu__list {
@@ -179,16 +179,11 @@ a {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-}
-
-.hero__banner-img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-  display: block;
   border-radius: 8px;
+  background-image: url("../assets/images/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .featured-products {
@@ -221,6 +216,7 @@ a {
   margin-bottom: 24px;
   padding: 30px;
   position: relative;
+  border-radius: 6px;
 }
 
 .featured-products__item-image-container::before {
@@ -256,7 +252,7 @@ a {
 
 .featured-products__item-favorite {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
   background: none;
   border: none;
@@ -264,7 +260,7 @@ a {
 }
 
 .featured-products__progress-bar {
-  height: 4px;
+  height: 2px;
   background-color: #e0e0e0;
   border-radius: 2px;
   overflow: hidden;
@@ -281,8 +277,7 @@ a {
 }
 
 .product-listing__count {
-  padding-top: 42px;
-  padding-bottom: 64px;
+  padding: 43px 0 65px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,6 +299,7 @@ a {
   background-color: var(--product-bg);
   padding: 32px;
   position: relative;
+  border-radius: 6px;
 }
 
 .product-listing__item-img {
@@ -453,10 +449,6 @@ a {
 .product-modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 2000;
 }
 
@@ -480,16 +472,15 @@ a {
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 0;
-  max-width: 90%;
-  max-height: 90vh;
   overflow-y: auto;
-  width: 800px;
+  border-radius: 6px;
+  width: 50%;
 }
 
 .product-modal__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 32px;
+  right: 32px;
   background: none;
   border: none;
   cursor: pointer;
@@ -501,25 +492,24 @@ a {
 .product-modal__image-container {
   margin-bottom: 0;
   background-color: var(--product-bg);
-  padding: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 32px;
 }
 
 .product-modal__id {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 32px;
+  left: 32px;
   margin: 0;
   z-index: 1;
 }
 
 .product-modal__image {
-  max-width: 100%;
   max-height: 500px;
-  object-fit: contain;
+  padding: 32px;
 }
 
 .swiper-container {
@@ -673,9 +663,17 @@ a {
     filter: none;
   }
 
+  .featured-products {
+    padding: 36px 0;
+  }
+
   .featured-products__title {
     font-size: var(--font-size-mobile-h1);
     font-weight: var(--font-weight-h1);
+  }
+
+  .featured-products__progress-bar {
+    margin-top: 32px;
   }
 
   .product-listing__grid {
@@ -699,12 +697,25 @@ a {
     width: 90%;
   }
 
-  .product-modal__image-container {
+  .product-modal__image {
     padding: 16px;
+    max-height: 420px;
+  }
+
+  .product-listing__count {
+    padding: 24px 0 33px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .hero__banner {
+    background-image: url("../assets/images/hero_mobile.jpg");
   }
 
   .hero__logo-img {
-    width: 80%;
+    width: 100%;
   }
 
   .swiper-container {
@@ -741,5 +752,9 @@ a {
 
   .product-listing__select-trigger::after {
     font-size: 10px;
+  }
+
+  .product-listing__item-image-container {
+    padding: 8px;
   }
 }

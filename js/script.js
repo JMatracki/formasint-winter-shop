@@ -30,8 +30,8 @@ const downloadData = async () => {
 };
 
 const formatProductId = (id) => {
-  const idNumber = parseInt(id.replace('ID: ', ''), 10);
-  return `ID: ${idNumber.toString().padStart(2, '0')}`;
+  const idNumber = parseInt(id.replace("ID: ", ""), 10);
+  return `ID: ${idNumber.toString().padStart(2, "0")}`;
 };
 
 const appendProducts = (products) => {
@@ -63,8 +63,12 @@ const appendProducts = (products) => {
 
         <div class="product-listing__item">
           <div class="product-listing__item-image-container">
-            <img class="product-listing__item-img" alt="item" src="${product.image}" />
-            <div class="product-listing__item-id">${formatProductId(`ID: ${product.id}`)}</div>
+            <img class="product-listing__item-img" alt="item" src="${
+              product.image
+            }" />
+            <div class="product-listing__item-id">${formatProductId(
+              `ID: ${product.id}`
+            )}</div>
           </div>
         </div>
       `;
@@ -73,8 +77,12 @@ const appendProducts = (products) => {
     return `
       <div class="product-listing__item">
         <div class="product-listing__item-image-container">
-          <img class="product-listing__item-img" alt="item" src="${product.image}" />
-          <div class="product-listing__item-id">${formatProductId(`ID: ${product.id}`)}</div>
+          <img class="product-listing__item-img" alt="item" src="${
+            product.image
+          }" />
+          <div class="product-listing__item-id">${formatProductId(
+            `ID: ${product.id}`
+          )}</div>
         </div>
       </div>
     `;
@@ -247,29 +255,31 @@ const initCustomSelect = () => {
 };
 
 const initProductModal = () => {
-  const modal = document.getElementById('productModal');
-  const modalImage = modal.querySelector('.product-modal__image');
-  const modalId = modal.querySelector('.product-modal__id');
-  const closeButton = modal.querySelector('.product-modal__close');
-  const overlay = modal.querySelector('.product-modal__overlay');
+  const modal = document.getElementById("productModal");
+  const modalImage = modal.querySelector(".product-modal__image");
+  const modalId = modal.querySelector(".product-modal__id");
+  const closeButton = modal.querySelector(".product-modal__close");
+  const overlay = modal.querySelector(".product-modal__overlay");
 
   const openModal = (productImage, productId) => {
     modalImage.src = productImage;
     modalId.textContent = formatProductId(productId);
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    modal.classList.add("active");
+    document.body.classList.add("no-scroll");
   };
 
   const closeModal = () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+    modal.classList.remove("active");
+    if (!document.getElementById("hamburger-toggle").checked) {
+      document.body.classList.remove("no-scroll");
+    }
   };
 
-  closeButton.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
+  closeButton.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
       closeModal();
     }
   });
@@ -329,9 +339,27 @@ document
 document.querySelectorAll(".drawer-menu__link").forEach((link) => {
   link.addEventListener("click", () => {
     document.getElementById("hamburger-toggle").checked = false;
+    if (!document.getElementById("productModal").classList.contains("active")) {
+      document.body.classList.remove("no-scroll");
+    }
   });
 });
 
 document.querySelector(".drawer-overlay").addEventListener("click", () => {
   document.getElementById("hamburger-toggle").checked = false;
+  if (!document.getElementById("productModal").classList.contains("active")) {
+    document.body.classList.remove("no-scroll");
+  }
 });
+
+document
+  .getElementById("hamburger-toggle")
+  .addEventListener("change", function () {
+    if (this.checked) {
+      document.body.classList.add("no-scroll");
+    } else if (
+      !document.getElementById("productModal").classList.contains("active")
+    ) {
+      document.body.classList.remove("no-scroll");
+    }
+  });
