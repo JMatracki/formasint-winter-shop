@@ -539,14 +539,16 @@ a {
   width: 72px;
   height: 72px;
   user-select: none;
+  right: 10px;
 }
 
 .swiper-button-next::after {
-  content: "";
+  display: none !important;
 }
 
-.swiper-button-next {
-  right: 10px;
+.swiper-button-next svg,
+.swiper-button-next .swiper-navigation-icon {
+  display: none !important;
 }
 
 @media (max-width: 1200px) {

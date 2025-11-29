@@ -137,8 +137,8 @@ function updateProgressBar() {
   }
 }
 
-const initSwiper = () =>
-  new Swiper(".featured-products__swiper", {
+const initSwiper = () => {
+  const swiper = new Swiper(".featured-products__swiper", {
     loop: true,
     spaceBetween: 24,
     navigation: {
@@ -161,9 +161,21 @@ const initSwiper = () =>
     },
     on: {
       slideChange: updateProgressBar,
-      afterInit: updateProgressBar,
+      afterInit: function() {
+        updateProgressBar.call(this);
+        // Usuń domyślną ikonę SVG Swipera
+        const nextButton = document.querySelector(".swiper-button-next");
+        if (nextButton) {
+          const svg = nextButton.querySelector("svg");
+          if (svg) svg.remove();
+          const icon = nextButton.querySelector(".swiper-navigation-icon");
+          if (icon) icon.remove();
+        }
+      },
     },
   });
+  return swiper;
+};
 
 const initNavigation = () => {
   const sections = document.querySelectorAll("section[id]");
